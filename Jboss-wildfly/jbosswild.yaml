@@ -1,0 +1,30 @@
+---
+- name: install wildfly on ubuntu 18.04
+  hosts: all
+  become: yes
+  tasks:
+    - name: install java on ubuntu
+      ansible.builtin.apt:
+        name: openjdk-11-jdk
+        update_cache: true
+        state: present
+    - name: create a group
+      ansible.builtin.group:
+        name: wildfly
+        system: true
+        state: present    
+    - name: create a user
+      ansible.builtin.user:
+        create_home: true
+        name: wildfly     
+        group: wildfly
+        system: true
+        home: /opt/wildfly
+        shell: /sbin/nologin
+        state: present
+    - name: download wildfly 16.0.0.final
+      ansible.builtin.get_url:
+        url: https://download.jboss.org/wildfly/16.0.0/wildfly-.tar.gz
+        dest: /tmp/wildfly/16.0.0/wildfly-.tar.gz
+        state: present
+        
