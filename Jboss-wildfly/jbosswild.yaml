@@ -37,6 +37,7 @@
         force: true
         src: /opt/wildfly-16.0.0.Final
         dest: /opt/wildfly
-        owner: foo
-        group: foo
+        owner: wildfly
+        group: wildfly
         state: link
+        mode: 0750
