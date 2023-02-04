@@ -31,4 +31,4 @@
       ansible.builtin.unarchive:
         src: /tmp/wildfly-16.0.0.Final.tar.gz
         dest: /opt
-    
+        remote_src: true
