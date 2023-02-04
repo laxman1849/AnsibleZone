@@ -25,5 +25,10 @@
     - name: download wildfly 16.0.0.final
       ansible.builtin.get_url:
         url: https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz
-        dest: /home/devops/wildfly/16.0.0./wildfly-.tar.gz
-        state: present
+        dest: /tmp/wildfly-16.0.0.Final.tar.gz
+        mode: '0777'
+    - name: untar the wildflyurl
+      ansible.builtin.unarchive:
+        src: /tmp/wildfly-16.0.0.Final.tar.gz
+        dest: /opt
+    
