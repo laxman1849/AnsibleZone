@@ -24,7 +24,6 @@
         state: present
     - name: download wildfly 16.0.0.final
       ansible.builtin.get_url:
-        url: https://download.jboss.org/wildfly/16.0.0/wildfly-.tar.gz
-        dest: /tmp/wildfly/16.0.0/wildfly-.tar.gz
+        url:  https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz
+        dest: /tmp/wildfly/16.0.0./wildfly-.tar.gz
         state: present
-        
