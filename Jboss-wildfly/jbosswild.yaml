@@ -32,3 +32,9 @@
         src: /tmp/wildfly-16.0.0.Final.tar.gz
         dest: /opt
         remote_src: true
+    - name: create a symbolic linc
+      ansible.builtin.file:
+        force: true
+        src: /opt/wildfly-16.0.0.Final
+        dest: /opt/wildfly
+        state: hard
