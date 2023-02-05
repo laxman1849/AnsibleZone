@@ -36,8 +36,6 @@
       ansible.builtin.file:
         force: true
         src: /opt/wildfly-16.0.0.Final
-        dest: /opt/wildfly
-        owner: wildfly
-        group: wildfly
+        dest: /opt/wildfly 
         state: link
-        mode: 0750
+      
