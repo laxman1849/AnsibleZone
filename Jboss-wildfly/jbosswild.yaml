@@ -40,3 +40,5 @@
         group: wildfly
         name: wildfly 
         state: link
+    - name: change the directory ownership
+      ansible.builtin.command: chown -RH wildfly: /opt/wildfly
