@@ -47,3 +47,14 @@
         path: /etc/wildfly
         state: directory
         mode: '0755'
+    - name: copy the configuration file
+      ansible.builtin.copy:     
+        name: wildfly.conf
+        src: /opt/wildfly/docs/contrib/scripts/systemd/wildfly.conf
+        dest: /etc/wildfly/
+        owner: wildfly
+        group: wildfly
+        mode: '0644'
+        backup: yes
+
+
