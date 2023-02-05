@@ -49,7 +49,7 @@
         mode: '0755'
     - name: copy the configuration file
       ansible.builtin.copy:     
-        name: wildfly.conf
+        name: wildwildfly.conf
         src: /opt/wildfly/docs/contrib/scripts/systemd/wildfly.conf
         dest: /etc/wildfly/
         owner: wildfly
