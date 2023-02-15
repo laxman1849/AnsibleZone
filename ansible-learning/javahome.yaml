@@ -1,0 +1,10 @@
+---
+- name: insatll java on ubuntu
+  hosts: all
+  become: yes
+  tasks:
+    - name: install java
+      ansible.builtin.module:
+        name: openjdk-17-jdk
+        update_cache: yes
+        state: present   
